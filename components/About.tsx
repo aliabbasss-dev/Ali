@@ -53,7 +53,7 @@ const reasons = [
 
 export default function WhyDubaiAgentsFail() {
   return (
-    <section className="w-full bg-[#0B0B0B] py-20 px-4">
+    <section className="w-full bg-[#0B0B0B] py-20 mt-20 px-2">
       <div className="max-w-6xl mx-auto text-center">
         {/* Heading */}
         <h2 className="text-white text-3xl md:text-4xl font-extrabold leading-snug mb-12">
@@ -63,22 +63,30 @@ export default function WhyDubaiAgentsFail() {
         </h2>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {reasons.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div
-                key={index}
-                className="
-                  bg-[#1A1A1A] rounded-xl px-6 py-5
-                  flex items-center gap-4
-                "
-              >
-                <Icon className="text-[#F8C133] text-2xl" />
-                <p className="text-white text-sm font-medium leading-snug whitespace-pre-line">
-                  {item.text}
-                </p>
-              </div>
+         <div
+  key={index}
+  className="
+    bg-[#1A1A1A] rounded-xl px-8 py-7
+    flex items-right gap-10
+  "
+>
+  {/* ICON CONTAINER */}
+  <div className="bg-[#000000] rounded-lg p-1 flex items-center justify-center w-12 h-12">
+    <Icon className="text-[#F8C133] text-2xl" />
+  </div>
+
+  {/* TEXT */}
+<p className="text-white text-base font-medium leading-snug">
+
+    {item.text}
+  </p>
+</div>
+
+
             );
           })}
         </div>
