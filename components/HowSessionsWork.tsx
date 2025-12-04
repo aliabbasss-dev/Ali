@@ -24,47 +24,38 @@ export default function HowSessionsWork() {
         </p>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
 
-          {/* 1 */}
-          <div className="bg-[#1A1A1A] rounded-xl px-6 py-5 flex items-center gap-4">
-            <FaWifi className="text-[#F8C133] text-2xl" />
-            <p className="text-white text-base font-medium">Stable internet connection</p>
-          </div>
+          {[
+            { icon: FaWifi, text: "Stable internet connection" },
+            { icon: FaMicrophoneSlash, text: "Distraction-free environment" },
+            { icon: FaCamera, text: "Camera on" },
+            { icon: FaStopwatch, text: "On time and prepared" },
+            { icon: FaBookOpen, text: "Notes ready" },
+            { icon: FaLightbulb, text: "Openness to direct feedback" },
+          ].map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={idx}
+                className="bg-[#1e1e1e] rounded-xl px-8 py-6 flex items-center gap-5"
+              >
+                {/* ICON WRAPPER */}
+                <div className="w-12 h-12 flex items-center justify-center bg-[#000000] rounded-full">
+                  <Icon className="text-[#F8C133] text-xl" />
+                </div>
 
-          {/* 2 */}
-          <div className="bg-[#1A1A1A] rounded-xl px-6 py-5 flex items-center gap-4">
-            <FaMicrophoneSlash className="text-[#F8C133] text-2xl" />
-            <p className="text-white text-base font-medium">Distraction-free environment</p>
-          </div>
-
-          {/* 3 */}
-          <div className="bg-[#1A1A1A] rounded-xl px-6 py-5 flex items-center gap-4">
-            <FaCamera className="text-[#F8C133] text-2xl" />
-            <p className="text-white text-base font-medium">Camera on</p>
-          </div>
-
-          {/* 4 */}
-          <div className="bg-[#1A1A1A] rounded-xl px-6 py-5 flex items-center gap-4">
-            <FaStopwatch className="text-[#F8C133] text-2xl" />
-            <p className="text-white text-base font-medium">On time and prepared</p>
-          </div>
-
-          {/* 5 */}
-          <div className="bg-[#1A1A1A] rounded-xl px-6 py-5 flex items-center gap-4">
-            <FaBookOpen className="text-[#F8C133] text-2xl" />
-            <p className="text-white text-base font-medium">Notes ready</p>
-          </div>
-
-          {/* 6 */}
-          <div className="bg-[#1A1A1A] rounded-xl px-6 py-5 flex items-center gap-4">
-            <FaLightbulb className="text-[#F8C133] text-2xl" />
-            <p className="text-white text-base font-medium">Openness to direct feedback</p>
-          </div>
+                {/* TEXT */}
+                <p className="text-white text-lg font-medium leading-snug">
+                  {item.text}
+                </p>
+              </div>
+            );
+          })}
         </div>
 
         {/* FOOTER TEXT */}
-        <p className="text-[#C7C7C7] text-base leading-relaxed">
+        <p className="text-[#C7C7C7] text-base md:text-lg font-medium leading-relaxed">
           These standards ensure we operate at a professional, high-performance level.
         </p>
 

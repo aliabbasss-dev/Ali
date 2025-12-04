@@ -2,81 +2,116 @@
 
 import { FaCheckCircle } from "react-icons/fa";
 
-export default function Investment(){
+export default function Investment() {
   return (
-    <section className="w-full bg-[#070707] py-24 px-6">
-      <div className="max-w-7xl mx-auto text-center mb-16">
-        <h2 className="text-white text-3xl md:text-4xl font-extrabold">
+    <section className="w-full bg-[#070707] py-20 px-6">
+      
+      {/* HEADING */}
+      <div className="max-w-7xl mx-auto text-center mb-14">
+        <h2 className="text-[#ffc72c] text-3xl md:text-4xl font-bold tracking-wide">
           INVESTMENT
         </h2>
       </div>
 
-      {/* CARDS */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+      {/* CARDS GRID — SMALLER WIDTH */}
+      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         
         {/* LEFT CARD */}
-        <div className="bg-[#1A1A1A] rounded-3xl p-10 text-left">
-          <h3 className="text-white text-2xl font-bold mb-6">
+        <div className="bg-[#1e1e1e] rounded-2xl px-7 py-8 flex flex-col">
+          
+          {/* TITLE (Bigger now) */}
+          <h3 className="text-white text-xl md:text-2xl font-medium mb-4">
             Performance Strategy Session
           </h3>
 
-          <p className="text-[#F8C133] text-4xl font-extrabold mb-8">
+          {/* PRICE (Bigger now) */}
+          <p className="text-[#F8C133] text-3xl md:text-4xl font-medium mb-6">
             AED 495
           </p>
 
-          <div className="flex flex-col gap-4 mb-10">
+          {/* BULLETS */}
+          <div className="flex flex-col gap-5 mb-6">
             {[
               "45-minute diagnostic session",
               "30-day execution plan",
               "Skill + communication gap analysis",
               "Eligibility assessment",
             ].map((item, idx) => (
-              <div key={idx} className="flex items-center gap-3">
-                <FaCheckCircle className="text-[#F8C133] text-xl" />
-                <p className="text-white text-base leading-relaxed">{item}</p>
+              <div key={idx} className="flex items-center gap-2">
+                <FaCheckCircle className="text-[#F8C133] text-lg" />
+                <p className="text-white text-sm md:text-base leading-snug">
+                  {item}
+                </p>
               </div>
             ))}
           </div>
 
-          <p className="text-[#C7C7C7] text-xs mb-6">
+          {/* SMALL NOTE */}
+          <p className="text-[#C7C7C7] text-[11px] mb-5 leading-snug">
             This is the only purchasable step until accepted.
           </p>
 
-          <button className="bg-[#F8C133] text-black font-semibold rounded-full px-8 py-4 text-base w-full hover:opacity-90 transition">
+          {/* BUTTON */}
+          <button
+            className="
+              w-full
+              rounded-full
+              text-black
+              font-semibold
+              text-sm md:text-base
+              py-3
+              bg-[linear-gradient(90deg,#F8C133_0%,#DCA32E_100%)]
+              hover:opacity-90
+              transition
+            "
+          >
             Book your Session
           </button>
         </div>
 
         {/* RIGHT CARD */}
-        <div className="bg-[#F8C133] rounded-3xl p-10 text-left relative overflow-hidden">
-          <h3 className="text-black text-2xl font-bold mb-6">
-            Performance Mentorship
-          </h3>
+        <div className="rounded-2xl overflow-hidden">
+          
+          {/* YELLOW TOP */}
+          <div className="bg-[#F8C133] rounded-t-2xl px-7 py-8">
 
-          <p className="text-black text-4xl font-extrabold mb-1">
-            AED 3,195<span className="text-lg font-medium">/ Month</span>
-          </p>
+            {/* TITLE (Bigger now) */}
+            <h3 className="text-black text-xl md:text-2xl font-medium mb-4">
+              Performance Mentorship
+            </h3>
 
-          <div className="flex flex-col gap-4 mt-8 mb-14">
-            {[
-              "Weekly 1:1 sessions (30–45 minutes)",
-              "Structured weekly performance plan",
-              "Communication + negotiation development",
-              "Pipeline and deal strategy",
-              "Ongoing support + accountability",
-              "Monthly progress evaluation",
-            ].map((item, idx) => (
-              <div key={idx} className="flex items-center gap-3">
-                <FaCheckCircle className="text-black text-xl" />
-                <p className="text-black text-base leading-relaxed">{item}</p>
-              </div>
-            ))}
+            {/* PRICE (Bigger now) */}
+            <p className="text-black text-3xl md:text-4xl font-medium mb-1">
+              AED 3,195
+              <span className="text-sm md:text-base font-medium">/ Month</span>
+            </p>
+
+            {/* BULLETS */}
+            <div className="flex flex-col gap-5 mt-6">
+              {[
+                "Weekly 1:1 sessions (30–45 minutes)",
+                "Structured weekly performance plan",
+                "Communication + negotiation development",
+                "Pipeline and deal strategy",
+                "Ongoing support + accountability",
+                "Monthly progress evaluation",
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-center gap-2">
+                  <FaCheckCircle className="text-black text-lg" />
+                  <p className="text-black text-sm md:text-base leading-snug">
+                    {item}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="h-5" />
           </div>
 
-          <div className="bg-[#1A1A1A] rounded-b-3xl -mx-10 px-10 py-4">
-            <p className="text-[#C7C7C7] text-xs">
-              Available only after completing the Strategy
-              Session and being accepted into the program.
+          {/* BOTTOM BLACK PANEL (Compact) */}
+          <div className="bg-[#1A1A1A] rounded-b-2xl px-7 py-3">
+            <p className="text-[#C7C7C7] text-[11px] leading-snug">
+              Available only after completing the Strategy Session and being accepted into the program.
             </p>
           </div>
         </div>
@@ -84,14 +119,13 @@ export default function Investment(){
       </div>
 
       {/* FOOTER TEXT */}
-      <div className="max-w-4xl mx-auto text-center mt-16">
-        <p className="text-[#C7C7C7] text-base leading-relaxed">
-          Most agents lose more in missed opportunities than the cost of mentorship. 
-          Even one additional transaction per quarter typically exceeds the full investment. 
-          This program is designed to help serious agents operate at a level where consistent 
-          deals — and higher commissions — become predictable outcomes.
+      <div className="max-w-3xl mx-auto text-center mt-14">
+        <p className="text-[#C7C7C7] text-sm md:text-base leading-relaxed">
+          Most agents lose more in missed opportunities than the cost of mentorship.
+          Even one additional transaction per quarter typically exceeds the full investment.
         </p>
       </div>
+
     </section>
   );
 }

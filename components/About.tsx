@@ -70,7 +70,7 @@ export default function WhyDubaiAgentsFail() {
          <div
   key={index}
   className="
-    bg-[#1A1A1A] rounded-xl px-8 py-7
+    bg-[#1e1e1e] rounded-xl px-8 py-7
     flex items-right gap-10
   "
 >

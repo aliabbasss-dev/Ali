@@ -43,39 +43,43 @@ export default function FAQSection(){
         
         {/* LEFT TITLE */}
         <div>
-          <h2 className="text-white text-3xl md:text-4xl font-extrabold leading-snug mb-2">
+          <h2 className="text-white text-3xl md:text-4xl font-medium leading-snug mb-2">
             FREQUENTLY ASKED
           </h2>
-          <h2 className="text-[#F8C133] text-3xl md:text-4xl font-extrabold leading-snug">
+          <h2 className="text-[#F8C133] text-3xl md:text-4xl font-medium leading-snug">
             QUESTIONS
           </h2>
         </div>
 
         {/* RIGHT ACCORDION */}
-        <div className="flex flex-col gap-4">
-          {faqs.map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-[#1A1A1A] rounded-xl px-6 py-4 cursor-pointer select-none"
-              onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-            >
-              <div className="flex items-center justify-between">
-                <p className="text-white text-base font-medium">{item.q}</p>
-                <FaChevronDown
-                  className={`text-white text-sm transition-transform ${
-                    openIndex === idx ? "rotate-180" : ""
-                  }`}
-                />
-              </div>
 
-              {openIndex === idx && (
-                <p className="text-[#C7C7C7] text-sm leading-relaxed mt-3">
-                  {item.a}
-                </p>
-              )}
-            </div>
-          ))}
-        </div>
+<div className="flex flex-col gap-3">
+  {faqs.map((item, idx) => (
+    <div
+      key={idx}
+      className="bg-[#1A1A1A] rounded-xl px-7 py-5 cursor-pointer select-none"
+      onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
+    >
+      {/* QUESTION ROW */}
+      <div className="flex items-center justify-between">
+        <p className="text-white text-lg font-medium">{item.q}</p>
+
+        <FaChevronDown
+          className={`text-white text-base transition-transform duration-300 ${
+            openIndex === idx ? "rotate-180" : ""
+          }`}
+        />
+      </div>
+
+      {/* ANSWER */}
+      {openIndex === idx && (
+        <p className="text-[#C7C7C7] text-sm md:text-base leading-relaxed mt-4">
+          {item.a}
+        </p>
+      )}
+    </div>
+  ))}
+</div>
 
       </div>
     </section>
