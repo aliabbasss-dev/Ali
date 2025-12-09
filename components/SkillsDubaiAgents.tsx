@@ -2,7 +2,7 @@
 
 import { FaMicrophone, FaRocket, FaHandshake, FaUser, FaLightbulb } from "react-icons/fa";
 import Image from "next/image";
-import logo from "@/public/logo2.png"; // replace with actual logo path
+import logo from "@/public/logo.png"; // replace with actual logo path
 
 export default function SkillsDubaiAgents() {
   return (
