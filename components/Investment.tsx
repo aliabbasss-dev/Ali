@@ -52,16 +52,20 @@ export default function Investment() {
           </p>
 
           {/* BUTTON */}
-          <button
-            className="
-              w-full rounded-full text-black font-semibold 
-              text-sm md:text-base py-3 hover:opacity-90 transition
-              bg-[linear-gradient(90deg,#F8C133_0%,#DCA32E_100%)]
-              max-sm:py-2.5 max-sm:text-sm
-            "
-          >
-            Book your Session
-          </button>
+<a
+  href="https://calendly.com/owainati/performance-strategy-session"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
+    w-full block text-center rounded-full text-black font-semibold
+    text-sm md:text-base py-3 hover:opacity-90 transition
+    bg-[linear-gradient(90deg,#F8C133_0%,#DCA32E_100%)]
+    max-sm:py-2.5 max-sm:text-sm
+  "
+>
+  Book your Session
+</a>
+
         </div>
 
         {/* RIGHT CARD */}

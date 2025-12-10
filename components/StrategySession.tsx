@@ -85,17 +85,21 @@ export default function StrategySession() {
             </p>
 
             {/* BUTTON */}
-            <button
-              className="
-                w-full rounded-full text-black font-semibold text-base py-4
-                hover:opacity-90 transition
-                bg-[linear-gradient(90deg,#F8C133_0%,#DCA32E_100%)]
-                shadow-[0px_4px_10px_rgba(0,0,0,0.25)]
-                max-sm:py-3 max-sm:text-sm
-              "
-            >
-              Book Your Performance Strategy Session
-            </button>
+<a
+  href="https://calendly.com/owainati/performance-strategy-session"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
+    w-full block text-center rounded-full text-black font-semibold text-base py-4
+    hover:opacity-90 transition
+    bg-[linear-gradient(90deg,#F8C133_0%,#DCA32E_100%)]
+    shadow-[0px_4px_10px_rgba(0,0,0,0.25)]
+    max-sm:py-3 max-sm:text-sm
+  "
+>
+  Book Your Performance Strategy Session
+</a>
+
           </div>
 
         </div>

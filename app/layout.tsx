@@ -12,8 +12,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Artshaft - Creative Digital Solutions",
-  description: "Dynamic. Creative. Futuristic.",
+  title: "ALI OMNATI - PERFORMANCE MENTORSHIP FOR REAL ESTATE AGENTS",
+  description: "Dubai’s Elite Performance Mentorship for Real Estate Agents",
   generator: "v0.app",
   icons: {
     icon: [

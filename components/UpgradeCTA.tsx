@@ -43,17 +43,20 @@ export default function UpgradeCTA() {
               REAL ESTATE <span className="text-[#F8C133]">PERFORMANCE?</span>
             </h2>
 
-            <button
-              className="
-                bg-[#F8C133] text-black font-medium rounded-full 
-                px-8 py-4 mt-4 text-base hover:opacity-90 transition
+<a
+  href="https://calendly.com/owainati/performance-strategy-session"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
+    bg-[#F8C133] text-black font-medium rounded-full 
+    px-8 py-4 mt-4 text-base hover:opacity-90 transition
+    max-sm:px-6 max-sm:py-3 max-sm:text-sm max-sm:mt-3
+    inline-block
+  "
+>
+  Book Your Performance Strategy Session
+</a>
 
-                /* MOBILE SIZE */
-                max-sm:px-6 max-sm:py-3 max-sm:text-sm max-sm:mt-3
-              "
-            >
-              Book Your Performance Strategy Session
-            </button>
           </div>
 
         </div>

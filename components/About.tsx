@@ -36,8 +36,8 @@ export default function WhyDubaiAgentsFail() {
           BEFORE THEY EVEN BEGIN
         </h2>
 
-        {/* GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-sm:gap-3">
+        {/* GRID — MOBILE = 2 COLUMNS */}
+        <div className="grid max-sm:grid-cols-2 grid-cols-1 md:grid-cols-3 gap-4 max-sm:gap-3">
           {reasons.map((item, idx) => {
             const Icon = item.icon;
             return (

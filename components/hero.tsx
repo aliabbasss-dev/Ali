@@ -28,8 +28,13 @@ export default function HeroSection() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-5 items-center">
 
             {/* LEFT CONTENT */}
-            <div className="space-y-6 sm:space-y-8 mt-10 max-sm:space-y-4">
-              
+         <div
+  className="
+    space-y-6 sm:space-y-8 mt-10 max-sm:space-y-4
+    max-sm:text-center max-sm:flex max-sm:flex-col max-sm:items-center
+  "
+>
+
               {/* MOBILE-SCALED HEADING */}
               <h1
                 className="
@@ -44,34 +49,40 @@ export default function HeroSection() {
                 </span>
               </h1>
 
-              {/* SUBTEXT */}
-              <p
-                className="
-                  text-gray-300 leading-relaxed
-                  text-sm sm:text-base md:text-lg
-                  max-w-xs sm:max-w-sm md:max-w-md
-                  max-sm:text-xs max-sm:leading-snug
-                "
-              >
+<p
+  className="
+    text-gray-300 leading-relaxed
+    text-sm sm:text-base md:text-lg
+    max-sm:max-w-full sm:max-w-sm md:max-w-md
+    max-sm:text-xs max-sm:leading-snug
+  "
+>
+
                 Elite 1:1 Performance Mentorship for agents who want clarity,
                 consistency, and a strong pipeline they can rely on.
               </p>
 
               {/* CTA BUTTON */}
-              <button
-                className="
-                  px-8 sm:px-10
-                  py-3 sm:py-4
-                  rounded-full
-                  text-sm sm:text-base font-semibold
-                  bg-gradient-to-r from-[#E3A721] to-[#FFCC47]
-                  text-black shadow-md
-                  hover:brightness-110 transition-all
-                  max-sm:py-2 max-sm:text-xs
-                "
-              >
-                Book Your Performance Strategy Session
-              </button>
+<a
+  href="https://calendly.com/owainati/performance-strategy-session"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
+    px-8 sm:px-10
+    py-3 sm:py-4
+    rounded-full
+    text-sm sm:text-base font-semibold
+    bg-gradient-to-r from-[#E3A721] to-[#FFCC47]
+    text-black shadow-md
+    hover:brightness-110 transition-all
+    max-sm:py-2 max-sm:text-xs
+    inline-block
+    text-center
+  "
+>
+  Book Your Performance Strategy Session
+</a>
+
             </div>
 
             {/* RIGHT IMAGE */}
@@ -83,7 +94,7 @@ export default function HeroSection() {
                 height={1100}
                 priority
                 className="
-                  object-contain z-30
+                  object-contain 
                   w-[280px] -mb-20
                   sm:w-[300px] sm:-mb-16
                   md:w-[420px] md:-mb-24
@@ -92,7 +103,7 @@ export default function HeroSection() {
                   2xl:w-[720px] 2xl:-mb-48
 
                   /* MOBILE FIX */
-                  max-sm:w-[210px] max-sm:-mb-10
+                  max-sm:w-[290px] max-sm:-mb-0
                 "
               />
             </div>
@@ -102,7 +113,7 @@ export default function HeroSection() {
       </div>
 
       {/* GOLD STRIP (Mobile tightened) */}
-      <div className="w-full bg-[#E3A721] py-6 sm:py-8 px-4 lg:px-8 relative z-20 max-sm:py-4">
+      <div className="w-full bg-[#E3A721] py-6 -mt-20 sm:py-8 px-4 lg:px-8 relative  max-sm:py-4">
         <div className="max-w-7xl mx-auto">
           <p
             className="

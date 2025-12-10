@@ -68,7 +68,7 @@ export default function Navbar() {
             "
           >
             <span className="text-base">☰</span>
-            Menu
+          
           </button>
         </nav>
       </div>
