@@ -33,7 +33,7 @@ export default function Navbar() {
   return (
     <>
       {/* NAVBAR */}
-      <div className="w-full flex justify-center px-4 absolute top-6 left-0 z-50">
+      <div className="w-full flex justify-center px-4 sm:px-8 fixed top-6 left-0 z-50">
         <nav
           className="
             w-full max-w-6xl
@@ -51,7 +51,7 @@ export default function Navbar() {
   alt="Performance Mentorship Logo"
   width={70}
   height={70}
-  className="object-contain w-20 h-20 -my-4"
+  className="object-contain scale-130 w-20 h-20 -my-4"
 
 />
 
