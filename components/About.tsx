@@ -47,17 +47,23 @@ export default function WhyDubaiAgentsFail() {
                   bg-[#1e1e1e] rounded-xl 
                   px-8 py-7 flex items-start gap-10
 
-                  max-sm:px-4 max-sm:py-4 
-                  max-sm:gap-4
+                  /* MOBILE TIGHTER SPACING */
+                  max-sm:px-3 max-sm:py-3 
+                  max-sm:gap-3
                 "
               >
                 {/* ICON */}
-                <div className="bg-[#000000] rounded-lg p-1 flex items-center justify-center w-12 h-12 max-sm:w-10 max-sm:h-10">
-                  <Icon className="text-[#F8C133] text-2xl max-sm:text-xl" />
+                <div className="bg-[#000000] rounded-lg p-1 flex items-center justify-center w-12 h-12 max-sm:w-8 max-sm:h-8">
+                  <Icon className="text-[#F8C133] text-2xl max-sm:text-lg" />
                 </div>
 
                 {/* TEXT */}
-                <p className="text-white text-base font-medium leading-snug max-sm:text-sm max-sm:leading-tight">
+                <p
+                  className="
+                    text-white text-base font-medium leading-snug
+                    max-sm:text-xs max-sm:leading-tight max-sm:text-left
+                  "
+                >
                   {item.text}
                 </p>
               </div>
