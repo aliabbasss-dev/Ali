@@ -15,7 +15,7 @@ export default function HowSessionsWork() {
       <div className="max-w-7xl mx-auto text-center">
 
         {/* HEADING */}
-        <h2 className="text-white text-3xl md:text-4xl font-extrabold leading-snug mb-2 max-sm:text-2xl max-sm:leading-tight">
+        <h2 className="text-white text-3xl md:text-4xl leading-snug mb-2 max-sm:text-2xl max-sm:leading-tight">
           HOW OUR <span className="text-[#F8C133]">SESSIONS</span> WORK
         </h2>
 

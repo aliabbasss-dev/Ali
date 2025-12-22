@@ -6,7 +6,7 @@ export default function QuestionForm() {
       
       {/* HEADING */}
       <div className="max-w-7xl mx-auto text-center mb-24 max-sm:mb-12">
-        <h2 className="text-white text-4xl md:text-5xl font-medium mb-10 max-sm:text-3xl max-sm:mb-6">
+        <h2 className="text-white text-4xl md:text-5xl mb-10 max-sm:text-3xl max-sm:mb-6">
           HAVE A <span className="text-[#F8C133]">QUESTION?</span>
         </h2>
 

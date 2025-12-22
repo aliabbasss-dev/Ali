@@ -15,7 +15,7 @@ export default function ReferralPrivileges() {
           {/* Heading */}
           <h2
             className="
-              text-black text-2xl md:text-3xl font-bold tracking-wide mb-6
+              text-black text-2xl md:text-3xl tracking-wide mb-6
               max-sm:text-xl max-sm:mb-4
             "
           >

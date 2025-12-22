@@ -5,36 +5,49 @@ import Image from "next/image";
 export default function HeroSection() {
   return (
     <section className="relative w-full text-white overflow-hidden">
-
       {/* HERO WRAPPER WITH BACKGROUND */}
       <div className="relative w-full pb-32 sm:pb-40 lg:pb-48 max-sm:pb-20">
-
         {/* BACKGROUND IMAGE */}
-        <div className="absolute inset-0 w-full h-full z-0">
-          <Image
-            src="/herobg.png"
-            alt="Dubai Skyline"
-            fill
-            className="object-cover object-bottom opacity-100"
-          />
-        </div>
+{/* BACKGROUND IMAGE */}
+<div className="absolute inset-0 z-0">
+
+  {/* DESKTOP / TABLET */}
+  <Image
+    src="/herobg.png"
+    alt="Dubai Skyline"
+    fill
+    priority
+    className="hidden sm:block object-cover object-bottom"
+  />
+
+  {/* MOBILE ONLY */}
+  <Image
+    src="/mbg.jpg"
+    alt="Dubai Skyline Mobile"
+    fill
+    priority
+    className="block sm:hidden object-cover object-center"
+  />
+
+
+</div>
+
 
         {/* MAIN HERO CONTENT */}
-        <div className="max-w-7xl mx-auto mt-10 px-5 sm:px-8 lg:px-12 
+        <div
+          className="max-w-7xl mx-auto mt-10 px-5 sm:px-8 lg:px-12 
                         py-20 sm:py-24 lg:py-32 
                         max-sm:py-14 
-                        relative z-20">
-          
+                        relative z-20"
+        >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-5 items-center">
-
             {/* LEFT CONTENT */}
-         <div
-  className="
+            <div
+              className="
     space-y-6 sm:space-y-8 mt-10 max-sm:space-y-4
     max-sm:text-center max-sm:flex max-sm:flex-col max-sm:items-center
   "
->
-
+            >
               {/* MOBILE-SCALED HEADING */}
               <h1
                 className="
@@ -49,25 +62,24 @@ export default function HeroSection() {
                 </span>
               </h1>
 
-<p
-  className="
+              <p
+                className="
     text-gray-300 leading-relaxed
     text-sm sm:text-base md:text-lg
     max-sm:max-w-full sm:max-w-sm md:max-w-md
     max-sm:text-xs max-sm:leading-snug
   "
->
-
+              >
                 Elite 1:1 Performance Mentorship for agents who want clarity,
                 consistency, and a strong pipeline they can rely on.
               </p>
 
               {/* CTA BUTTON */}
-<a
-  href="https://calendly.com/owainati/performance-strategy-session"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="
+              <a
+                href="https://calendly.com/owainati/performance-strategy-session"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
     px-8 sm:px-10
     py-3 sm:py-4
     rounded-full
@@ -79,10 +91,9 @@ export default function HeroSection() {
     inline-block
     text-center
   "
->
-  Book Your Performance Strategy Session
-</a>
-
+              >
+                Book Your Performance Strategy Session
+              </a>
             </div>
 
             {/* RIGHT IMAGE */}
@@ -107,7 +118,6 @@ export default function HeroSection() {
                 "
               />
             </div>
-
           </div>
         </div>
       </div>
@@ -122,12 +132,12 @@ export default function HeroSection() {
               max-sm:text-sm max-sm:leading-snug max-sm:text-center
             "
           >
-            Clarity, structure, and performance coaching designed to help you <br className="max-sm:hidden" />
+            Clarity, structure, and performance coaching designed to help you{" "}
+            <br className="max-sm:hidden" />
             close more deals with better clients
           </p>
         </div>
       </div>
-
     </section>
   );
 }

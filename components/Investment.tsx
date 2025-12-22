@@ -8,7 +8,7 @@ export default function Investment() {
       
       {/* HEADING */}
       <div className="max-w-7xl mx-auto text-center mb-14 max-sm:mb-10">
-        <h2 className="text-[#ffc72c] text-3xl md:text-4xl font-bold tracking-wide max-sm:text-2xl">
+        <h2 className="text-[#ffc72c] text-3xl md:text-4xl  tracking-wide max-sm:text-2xl">
           INVESTMENT
         </h2>
       </div>
@@ -119,9 +119,8 @@ export default function Investment() {
 
       {/* FOOTER TEXT */}
       <div className="max-w-3xl mx-auto text-center mt-14 max-sm:mt-10">
-        <p className="text-[#C7C7C7] text-sm md:text-base leading-relaxed max-sm:text-xs max-sm:leading-snug">
-          Most agents lose more in missed opportunities than the cost of mentorship.
-          Even one additional transaction per quarter typically exceeds the full investment.
+        <p className="text-[#C7C7C7] text-md font-medium md:text-base leading-relaxed max-sm:text-xs max-sm:leading-snug">
+Most agents lose more in missed opportunities than the cost of mentorship. Even one additional transaction per quarter typically exceeds the full investment. This program is designed to help serious agents operate at a level where consistent deals — and higher commissions — become predictable outcomes.
         </p>
       </div>
 

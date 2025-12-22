@@ -46,14 +46,17 @@ export default function Navbar() {
             flex items-center justify-between
           "
         >
-<Image
-  src="/logo.png"
-  alt="Performance Mentorship Logo"
-  width={70}
-  height={70}
-  className="object-contain scale-130 w-20 h-20 -my-4"
+<div className="flex items-center h-16">
+  <Image
+    src="/logo.png"
+    alt="Performance Mentorship Logo"
+    width={120}
+    height={70}
+    className="object-contain"
+    priority
+  />
+</div>
 
-/>
 
 
           {/* MENU BUTTON */}

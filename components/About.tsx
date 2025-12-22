@@ -30,7 +30,7 @@ export default function WhyDubaiAgentsFail() {
       <div className="max-w-6xl mx-auto text-center">
 
         {/* Heading */}
-        <h2 className="text-white text-3xl md:text-4xl font-extrabold leading-snug mb-12 max-sm:text-2xl max-sm:mb-8">
+        <h2 className="text-white text-3xl md:text-4xl  leading-snug mb-12 max-sm:text-2xl max-sm:mb-8">
           WHY MOST <span className="text-[#F8C133]">DUBAI AGENTS</span> FAIL
           <br className="max-sm:hidden" />
           BEFORE THEY EVEN BEGIN
@@ -64,7 +64,7 @@ export default function WhyDubaiAgentsFail() {
                     max-sm:text-xs max-sm:leading-tight max-sm:text-left
                   "
                 >
-                  {item.text} || sad
+                  {item.text}
                 </p>
               </div>
             );

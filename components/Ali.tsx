@@ -26,7 +26,7 @@ export default function MeetAliSection() {
         <div className="w-full lg:w-1/2 text-white max-sm:text-center lg:text-left">
           <h2
             className="
-              text-3xl md:text-4xl font-extrabold leading-snug mb-6
+              text-3xl md:text-4xl  leading-snug mb-6
               max-sm:text-2xl max-sm:leading-tight max-sm:mb-4
             "
           >

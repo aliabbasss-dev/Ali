@@ -20,7 +20,7 @@ export default function AcceptMentorship() {
           {/* TEXT */}
           <div>
             <h2 className="
-              text-white text-3xl md:text-4xl font-extrabold leading-snug
+              text-white text-3xl md:text-4xl leading-snug
               max-sm:text-2xl max-sm:leading-tight
             ">
               WHO I ACCEPT INTO <br />

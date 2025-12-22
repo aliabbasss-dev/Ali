@@ -1,191 +1,328 @@
 "use client";
 
-import { useState } from "react";
-import { FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import {
+  FaStar,
+  FaChevronLeft,
+  FaChevronRight,
+  FaQuoteLeft,
+} from "react-icons/fa";
 import Image from "next/image";
 import avatar from "@/public/avatar.png";
 
 export default function TestimonialsSlider() {
   const testimonials = [
     {
-      text: `Working with Alex was a game changer for us! His expertise in the real estate market helped us find our dream home in no time.`,
-      name: "Mickael Grants",
+      text: `Ali pretty much fast-tracked my entire start in real estate. I came in fresh out of uni, clueless, and he got me closing legit off-plan deals in a couple of months. No pep talks, no sugar coating. Just clear steps, real guidance, and a system that works. He made the whole thing feel doable.`,
+      name: "Shashank",
       role: "CEO of Apples to Oranges",
       rating: 5,
     },
     {
-      text: `This session helped me build massive clarity. My whole performance changed in weeks.`,
-      name: "Sarah Mitchell",
+      text: `I'd been in the game for a couple of years but felt stuck. Ali helped me break through that wall. He tightened up how I work, showed me how to negotiate properly, and suddenly I was closing deals consistently instead of getting lucky here and there. He keeps it real and focuses on what actually moves the needle.`,
+      name: "Siddhanth",
       role: "Dubai Real Estate Advisor",
+      rating: 4,
+    },
+    {
+      text: `I've been doing real estate for a long time, but I was burnt out and all over the place. Ali helped me get my structure back. Better routines, better focus, and better results without feeling drained. He brought clarity at a time I really needed it.`,
+      name: "Ambani",
+      role: "Sales Consultant",
       rating: 5,
     },
     {
-      text: `Alex helped me fix my pipeline and my execution. Results improved instantly.`,
-      name: "Thomas Green",
-      role: "Sales Consultant",
-      rating: 4,
+      text: `I was new to Dubai, new to sales, and new to real estate. Basically starting from zero. Ali helped me land my first few big deals within my first three months. He explains everything in a simple way, shows you exactly what to do, and somehow makes you feel like you can actually pull it off.`,
+      name: "Natella",
+      role: "Micro Consultant",
+      rating: 5,
+    },
+    {
+      text: `I already knew what I was doing, but I wanted to level up. Ali pushed me to think bigger, clean up my approach with clients, and be more intentional. My performance definitely jumped. He's the guy you go to when you want to stop coasting.`,
+      name: "Rein",
+      role: "Micro Consultant",
+      rating: 5,
     },
   ];
 
   const [index, setIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
-  const nextSlide = () => setIndex((prev) => (prev + 1) % testimonials.length);
-  const prevSlide = () => setIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  // Check for mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
 
-  const getPosition = (cardIndex : number) => {
-    if (cardIndex === index) return "center";
-    if (cardIndex === (index - 1 + testimonials.length) % testimonials.length) return "left";
-    if (cardIndex === (index + 1) % testimonials.length) return "right";
-    return "hidden";
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Auto slide for desktop
+  useEffect(() => {
+    if (isMobile) return;
+
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [isMobile, testimonials.length]);
+
+  const nextSlide = () => {
+    setIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevSlide = () => {
+    setIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  const goToSlide = (slideIndex: number) => {
+    setIndex(slideIndex);
+  };
+
+  // Get previous and next indices
+  const prevIndex = (index - 1 + testimonials.length) % testimonials.length;
+  const nextIndex = (index + 1) % testimonials.length;
+
+  // Rating stars component
+  const RatingStars = ({
+    rating,
+    isCenter,
+  }: {
+    rating: number;
+    isCenter: boolean;
+  }) => {
+    const totalStars = 5;
+    const filledStars = Math.min(rating, totalStars);
+    const emptyStars = totalStars - filledStars;
+
+    return (
+      <div className="flex items-center gap-1">
+        {/* Filled Stars */}
+        {[...Array(filledStars)].map((_, i) => (
+          <FaStar
+            key={`filled-${i}`}
+            className={`${
+              isCenter ? "text-black" : "text-[#F8C133]"
+            } text-sm sm:text-base`}
+          />
+        ))}
+
+        {/* Empty Stars */}
+        {[...Array(emptyStars)].map((_, i) => (
+          <FaStar
+            key={`empty-${i}`}
+            className={`${
+              isCenter ? "text-black/30" : "text-[#444]"
+            } text-sm sm:text-base`}
+          />
+        ))}
+      </div>
+    );
   };
 
   return (
-<section className="w-full bg-[#0B0B0B] py-24 max-sm:py-14 px-0 overflow-hidden">
-
-  {/* Heading */}
-  <div className="max-w-5xl mx-auto text-center px-6">
-    <h2 className="text-white text-3xl md:text-4xl font-medium mb-2 max-sm:text-2xl">
-      WHAT <span className="text-[#F8C133]">AGENTS</span> ARE SAYING
-    </h2>
-    <p className="text-[#C7C7C7] text-sm md:text-base max-sm:text-xs max-sm:leading-tight">
-      THE REAL IMPACT OF WORKING TOGETHER — DIRECTLY FROM THE AGENTS.
-    </p>
-  </div>
-
-  {/* TRACK */}
-  <div className="
-    relative w-full 
-    h-[450px] md:h-[420px] 
-    max-sm:h-[360px]
-    flex items-center justify-center overflow-visible
-  ">
-
-    {testimonials.map((item, i) => {
-      const pos = getPosition(i);
-
-      const base = `
-        absolute transition-all duration-500 ease-out 
-        rounded-3xl shadow-xl 
-        p-8 sm:p-10
-        max-sm:p-5
-      `;
-
-      let style = "";
-
-      if (pos === "center") {
-        style = `
-          w-[70%] sm:w-[60%] md:w-[600px]
-          max-sm:w-[85%]
-          bg-[#F8C133]
-          scale-100 opacity-100 z-20 translate-x-0 
-          py-20 max-sm:py-10
-        `;
-      } else if (pos === "left") {
-        style = `
-          hidden sm:block 
-          w-[50%] md:w-[430px]
-          bg-[#1A1A1A]
-          scale-90 opacity-50 
-          -translate-x-[50%] md:-translate-x-[58%]
-          z-10 py-18
-        `;
-      } else if (pos === "right") {
-        style = `
-          hidden sm:block 
-          w-[50%] md:w-[430px]
-          bg-[#1A1A1A]
-          scale-90 opacity-50 
-          translate-x-[50%] md:translate-x-[58%]
-          z-10 py-18
-        `;
-      }
-
-      return (
-        <div key={i} className={`${base} ${style}`}>
-          <p className={`
-            text-base sm:text-lg max-sm:text-sm
-            leading-relaxed max-sm:leading-snug 
-            mb-6 max-sm:mb-4
-            ${pos === "center" ? "text-black" : "text-white"}
-          `}>
-            {item.text}
+    <section className="w-full bg-[#0B0B0B] py-16 md:py-24 px-4 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        {/* Heading */}
+        <div className="text-center mb-12 md:mb-16 px-4">
+          <h2 className="text-white text-3xl sm:text-4xl md:text-5xl mb-3">
+            WHAT <span className="text-[#F8C133]">AGENTS</span> ARE SAYING
+          </h2>
+          <p className="text-[#C7C7C7] text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
+            THE REAL IMPACT OF WORKING TOGETHER — DIRECTLY FROM THE AGENTS.
           </p>
+        </div>
 
-          <div className="flex items-center justify-between max-sm:flex-col max-sm:items-start max-sm:gap-3">
-            
-            {/* Avatar + Name */}
-            <div className="flex items-center gap-3">
-              <Image
-                src={avatar}
-                alt={item.name}
-                className="w-10 h-10 rounded-full max-sm:w-8 max-sm:h-8"
-              />
-              <div>
-                <p className={`font-semibold ${pos === "center" ? "text-black" : "text-white"}`}>
-                  {item.name}
-                </p>
-                <p className={`text-xs ${pos === "center" ? "text-black" : "text-white"}`}>
-                  {item.role}
-                </p>
+        {/* Slider Container */}
+        <div className="relative w-full h-[500px] sm:h-[480px] md:h-[450px] flex items-center justify-center overflow-visible">
+          {/* LEFT CARD (Previous) */}
+          <div
+            className={`
+              absolute transition-all duration-500 ease-out
+              rounded-3xl shadow-xl
+              p-6 sm:p-8
+              bg-[#1A1A1A]
+              border border-[#333]
+              w-[300px] sm:w-[350px] md:w-[400px]
+              opacity-70 scale-90
+              -translate-x-[140%] sm:-translate-x-[130%] md:-translate-x-[120%]
+              cursor-pointer hover:opacity-80
+              z-10
+              ${isMobile ? "hidden" : "block"}
+            `}
+            onClick={() => goToSlide(prevIndex)}
+          >
+            <FaQuoteLeft className="text-2xl text-[#F8C133]/20 mb-4" />
+            <p className="text-white text-sm sm:text-base leading-relaxed mb-6 line-clamp-6">
+              {testimonials[prevIndex].text}
+            </p>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+
+                <div>
+                  <p className="text-white font-semibold">
+                    {testimonials[prevIndex].name}
+                  </p>
+                  <p className="text-[#C7C7C7] text-xs">
+                    {testimonials[prevIndex].role}
+                  </p>
+                </div>
               </div>
-            </div>
-
-            {/* Stars */}
-            <div className="flex items-center gap-1">
-              {Array.from({ length: item.rating }).map((_, starIndex) => (
-                <FaStar
-                  key={starIndex}
-                  className={`text-lg max-sm:text-base ${
-                    pos === "center" ? "text-black" : "text-white"
-                  }`}
-                />
-              ))}
+              <RatingStars
+                rating={testimonials[prevIndex].rating}
+                isCenter={false}
+              />
             </div>
           </div>
+
+          {/* CENTER CARD (Active) */}
+          <div
+            className={`
+              absolute transition-all duration-500 ease-out
+              rounded-3xl shadow-2xl
+              p-6 sm:p-8 md:p-10
+              bg-[#F8C133]
+              border border-[#F8C133]
+              w-[90%] sm:w-[85%] md:w-[700px] lg:w-[650px]
+              max-w-[95vw]
+              scale-100 opacity-100
+              z-20
+            `}
+          >
+            <FaQuoteLeft className="text-2xl sm:text-3xl text-black/20 mb-4" />
+        <p className="text-black text-sm sm:text-base md:text-lg leading-snug sm:leading-relaxed mb-6 sm:mb-8">
+
+              {testimonials[index].text}
+            </p>
+            <div className="flex items-center justify-between flex-wrap gap-4">
+              <div className="flex items-center gap-3">
+              
+                <div>
+                  <p className="text-black font-medium">
+                    {testimonials[index].name}
+                  </p>
+                  <p className="text-black/70 text-sm">
+                    {testimonials[index].role}
+                  </p>
+                </div>
+              </div>
+              <RatingStars
+                rating={testimonials[index].rating}
+                isCenter={true}
+              />
+            </div>
+          </div>
+
+          {/* RIGHT CARD (Next) */}
+          <div
+            className={`
+              absolute transition-all duration-500 ease-out
+              rounded-3xl shadow-xl
+              p-6 sm:p-8
+              bg-[#1A1A1A]
+              border border-[#333]
+              w-[300px] sm:w-[350px] md:w-[400px]
+              opacity-70 scale-90
+              translate-x-[140%] sm:translate-x-[130%] md:translate-x-[120%]
+              cursor-pointer hover:opacity-80
+              z-10
+              ${isMobile ? "hidden" : "block"}
+            `}
+            onClick={() => goToSlide(nextIndex)}
+          >
+            <FaQuoteLeft className="text-2xl text-[#F8C133]/20 mb-4" />
+            <p className="text-white text-sm sm:text-base leading-relaxed mb-6 line-clamp-6">
+              {testimonials[nextIndex].text}
+            </p>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+
+                <div>
+                  <p className="text-white font-semibold">
+                    {testimonials[nextIndex].name}
+                  </p>
+                  <p className="text-[#C7C7C7] text-xs">
+                    {testimonials[nextIndex].role}
+                  </p>
+                </div>
+              </div>
+              <RatingStars
+                rating={testimonials[nextIndex].rating}
+                isCenter={false}
+              />
+            </div>
+          </div>
+
+          {/* Navigation Arrows */}
+          <button
+            onClick={prevSlide}
+            className="
+              absolute left-0 sm:left-4 md:left-8
+              text-white text-2xl sm:text-3xl
+              hover:text-[#F8C133] transition-all duration-300
+              z-30 top-1/2 -translate-y-1/2
+              bg-black/50 hover:bg-black/70 
+              rounded-full w-10 h-10 sm:w-12 sm:h-12 
+              flex items-center justify-center
+              active:scale-95
+            "
+            aria-label="Previous testimonial"
+          >
+            <FaChevronLeft />
+          </button>
+
+          <button
+            onClick={nextSlide}
+            className="
+              absolute right-0 sm:right-4 md:right-8
+              text-white text-2xl sm:text-3xl
+              hover:text-[#F8C133] transition-all duration-300
+              z-30 top-1/2 -translate-y-1/2
+              bg-black/50 hover:bg-black/70 
+              rounded-full w-10 h-10 sm:w-12 sm:h-12 
+              flex items-center justify-center
+              active:scale-95
+            "
+            aria-label="Next testimonial"
+          >
+            <FaChevronRight />
+          </button>
         </div>
-      );
-    })}
 
-    {/* ARROWS */}
-    <button
-      onClick={prevSlide}
-      className="
-        absolute left-5 sm:left-10 
-        text-white text-3xl max-sm:text-2xl 
-        hover:text-[#F8C133] transition 
-        z-30 top-[50%] -translate-y-1/2
-      "
-    >
-      <FaChevronLeft />
-    </button>
+        {/* Dots Indicator */}
+        <div className="flex justify-center items-center gap-2 sm:gap-3 mt-12 sm:mt-16">
+          {testimonials.map((_, dotIndex) => (
+            <button
+              key={dotIndex}
+              onClick={() => goToSlide(dotIndex)}
+              className={`
+                w-2 h-2 sm:w-3 sm:h-3 rounded-full 
+                transition-all duration-300 
+                ${
+                  dotIndex === index
+                    ? "bg-[#F8C133] scale-125"
+                    : "bg-[#555] hover:bg-[#777]"
+                }
+                focus:outline-none focus:ring-2 focus:ring-[#F8C133]/50
+              `}
+              aria-label={`Go to testimonial ${dotIndex + 1}`}
+            />
+          ))}
+        </div>
 
-    <button
-      onClick={nextSlide}
-      className="
-        absolute right-5 sm:right-10 
-        text-white text-3xl max-sm:text-2xl 
-        hover:text-[#F8C133] transition 
-        z-30 top-[50%] -translate-y-1/2
-      "
-    >
-      <FaChevronRight />
-    </button>
-
-  </div>
-
-  {/* DOTS */}
-  <div className="flex justify-center gap-3 mt-12 max-sm:mt-6">
-    {testimonials.map((_, dotIndex) => (
-      <div
-        key={dotIndex}
-        className={`
-          w-3 h-3 rounded-full
-          ${dotIndex === index ? "bg-[#F8C133]" : "bg-[#555]"}
-        `}
-      />
-    ))}
-  </div>
-
-</section>
+        {/* Slide Counter */}
+        <div className="text-center mt-4">
+          <span className="text-[#F8C133] font-semibold text-base sm:text-lg">
+            {index + 1}
+          </span>
+          <span className="text-[#C7C7C7] mx-2">/</span>
+          <span className="text-[#C7C7C7] text-base sm:text-lg">
+            {testimonials.length}
+          </span>
+        </div>
+      </div>
+    </section>
   );
 }

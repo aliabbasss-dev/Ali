@@ -41,7 +41,7 @@ export default function FAQSection() {
     <section className="w-full bg-[#0B0B0B] py-24 px-6 max-sm:px-4">
       <div className="max-w-5xl mx-auto">
 
-        <h2 className="text-white text-3xl md:text-4xl font-bold mb-6 text-center">
+        <h2 className="text-white text-3xl md:text-4xl mb-6 text-center">
           FREQUENTLY ASKED <span className="text-[#F8C133]">QUESTIONS</span>
         </h2>
 
