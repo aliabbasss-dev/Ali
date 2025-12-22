@@ -64,7 +64,7 @@ export default function WhyDubaiAgentsFail() {
                     max-sm:text-xs max-sm:leading-tight max-sm:text-left
                   "
                 >
-                  {item.text}
+                  {item.text} || sad
                 </p>
               </div>
             );
