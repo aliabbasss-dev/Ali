@@ -13,14 +13,14 @@ import {
 } from "react-icons/fa";
 
 const reasons = [
-  { icon: FaCalendarAlt, text: "No weekly structure or discipline" },
+  { icon: FaCalendarAlt, text: "Lacking structure or discipline" },
   { icon: FaArrowDown, text: "Inconsistent prospecting" },
   { icon: FaHourglassHalf, text: "Time wasted on unqualified leads" },
-  { icon: FaQuestionCircle, text: "Poor qualification and weak messaging" },
+  { icon: FaQuestionCircle, text: "Poor vetting and messaging" },
   { icon: FaMap, text: "No system for pipeline growth" },
   { icon: FaCloud, text: "Unstructured follow-up" },
   { icon: FaFireAlt, text: "Burnout and loss of enthusiasm" },
-  { icon: FaRunning, text: "Chasing shortcuts instead of fundamentals" },
+  { icon: FaRunning, text: "Shortcuts over fundamentals" },
   { icon: FaExclamationTriangle, text: "No mentor to keep them accountable" },
 ];
 

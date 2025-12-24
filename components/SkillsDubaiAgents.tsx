@@ -47,23 +47,23 @@ export default function SkillsDubaiAgents() {
           <span className="text-[#F8C133]">MASTER TO WIN</span>
         </h2>
 
-        <p className="text-[#C7C7C7] text-base md:text-lg leading-relaxed mb-20 max-w-2xl mx-auto max-sm:text-sm">
+        <p className="text-[#C7C7C7] text-base md:text-lg leading-relaxed mb-20 max-w-2xl mx-auto max-sm:text-sm max-sm:mb-14">
           Most agents focus only on leads and listings. Top performers focus on the
           skills that actually close deals. Inside the mentorship, you will develop:
         </p>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-sm:gap-6">
 
-          {/* TOP ROW (3 CARDS) */}
+          {/* TOP ROW */}
           {skills.slice(0, 3).map((item, i) => (
             <div
               key={i}
               className="
                 bg-[#151515]
                 rounded-2xl
-                p-8
-                min-h-[220px]
+                p-6 md:p-8                 /* 🔽 smaller on mobile */
+                min-h-[180px] md:min-h-[220px]
                 text-left
                 transition-all
                 hover:-translate-y-1
@@ -71,37 +71,37 @@ export default function SkillsDubaiAgents() {
                 border border-white/5
               "
             >
-              <div className="text-[#F8C133] text-3xl mb-5">
+              <div className="text-[#F8C133] text-2xl md:text-3xl mb-4 md:mb-5">
                 {item.icon}
               </div>
 
-              <h3 className="text-white text-xl font-semibold mb-3">
+              <h3 className="text-white text-lg md:text-xl font-semibold mb-2 md:mb-3">
                 {item.title}
               </h3>
 
-              <p className="text-[#C7C7C7] text-sm leading-relaxed">
+              <p className="text-[#C7C7C7] text-[13px] md:text-sm leading-relaxed">
                 {item.desc}
               </p>
             </div>
           ))}
 
-          {/* BOTTOM ROW — CENTERED ON DESKTOP, STACKED ON MOBILE */}
+          {/* BOTTOM ROW */}
           <div className="
             md:col-span-3
             flex
             flex-col
             sm:flex-row
             justify-center
-            gap-8
+            gap-6 md:gap-8
           ">
             {skills.slice(3).map((item, i) => (
-              <div key={i} className="w-full sm:max-w-[360px]">
+              <div key={i} className="w-full sm:max-w-[340px]">
                 <div
                   className="
                     bg-[#151515]
                     rounded-2xl
-                    p-8
-                    min-h-[220px]
+                    p-6 md:p-8
+                    min-h-[180px] md:min-h-[220px]
                     text-left
                     transition-all
                     hover:-translate-y-1
@@ -109,15 +109,15 @@ export default function SkillsDubaiAgents() {
                     border border-white/5
                   "
                 >
-                  <div className="text-[#F8C133] text-3xl mb-5">
+                  <div className="text-[#F8C133] text-2xl md:text-3xl mb-4 md:mb-5">
                     {item.icon}
                   </div>
 
-                  <h3 className="text-white text-xl font-semibold mb-3">
+                  <h3 className="text-white text-lg md:text-xl font-semibold mb-2 md:mb-3">
                     {item.title}
                   </h3>
 
-                  <p className="text-[#C7C7C7] text-sm leading-relaxed">
+                  <p className="text-[#C7C7C7] text-[13px] md:text-sm leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
