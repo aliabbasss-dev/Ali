@@ -15,31 +15,31 @@ export default function TestimonialsSlider() {
     {
       text: `Ali pretty much fast-tracked my entire start in real estate. I came in fresh out of uni, clueless, and he got me closing legit off-plan deals in a couple of months. No pep talks, no sugar coating. Just clear steps, real guidance, and a system that works. He made the whole thing feel doable.`,
       name: "Shashank",
-      role: "CEO of Apples to Oranges",
+      role: "Property Consultant",
       rating: 5,
     },
     {
       text: `I'd been in the game for a couple of years but felt stuck. Ali helped me break through that wall. He tightened up how I work, showed me how to negotiate properly, and suddenly I was closing deals consistently instead of getting lucky here and there. He keeps it real and focuses on what actually moves the needle.`,
       name: "Siddhanth",
-      role: "Dubai Real Estate Advisor",
+ role: "Property Consultant",
       rating: 4,
     },
     {
       text: `I've been doing real estate for a long time, but I was burnt out and all over the place. Ali helped me get my structure back. Better routines, better focus, and better results without feeling drained. He brought clarity at a time I really needed it.`,
       name: "Ambani",
-      role: "Sales Consultant",
+ role: "Property Consultant",
       rating: 5,
     },
     {
       text: `I was new to Dubai, new to sales, and new to real estate. Basically starting from zero. Ali helped me land my first few big deals within my first three months. He explains everything in a simple way, shows you exactly what to do, and somehow makes you feel like you can actually pull it off.`,
       name: "Natella",
-      role: "Micro Consultant",
+ role: "Property Consultant",
       rating: 5,
     },
     {
       text: `I already knew what I was doing, but I wanted to level up. Ali pushed me to think bigger, clean up my approach with clients, and be more intentional. My performance definitely jumped. He's the guy you go to when you want to stop coasting.`,
       name: "Rein",
-      role: "Micro Consultant",
+ role: "Property Consultant",
       rating: 5,
     },
   ];

@@ -20,14 +20,13 @@ export default function HeroSection() {
     className="hidden sm:block object-cover object-bottom"
   />
 
-  {/* MOBILE ONLY */}
-  <Image
-    src="/mbg.jpg"
-    alt="Dubai Skyline Mobile"
-    fill
-    priority
-    className="block sm:hidden object-cover object-center"
-  />
+<Image
+  src="/mbg.jpg"
+  alt="Dubai Skyline Mobile"
+  fill
+  priority
+  className="block sm:hidden "
+/>
 
 
 </div>

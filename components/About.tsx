@@ -31,9 +31,8 @@ export default function WhyDubaiAgentsFail() {
 
         {/* Heading */}
         <h2 className="text-white text-3xl md:text-4xl  leading-snug mb-12 max-sm:text-2xl max-sm:mb-8">
-          WHY MOST <span className="text-[#F8C133]">DUBAI AGENTS</span> FAIL
-          <br className="max-sm:hidden" />
-          BEFORE THEY EVEN BEGIN
+          WHY MOST <span className="text-[#F8C133]">DUBAI AGENTS </span> FAIL
+           BEFORE THEY EVEN BEGIN
         </h2>
 
         {/* GRID — MOBILE = 2 COLUMNS */}

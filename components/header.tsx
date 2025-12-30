@@ -51,7 +51,7 @@ export default function Navbar() {
     src="/logo.png"
     alt="Performance Mentorship Logo"
     width={120}
-    height={70}
+    height={40}
     className="object-contain"
     priority
   />
